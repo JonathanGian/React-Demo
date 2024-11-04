@@ -29,6 +29,7 @@ function App() {
           <p>Hello, User! You are logged in.</p>
           <button onClick={handleLoginClick}>Log Out</button>
         </div>
+        
       ) : (<button onClick={handleLoginClick}>Log in</button>
 
       )}
