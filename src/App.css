@@ -1,0 +1,61 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+#logo{
+  display: flex;
+width: 100%;
+
+
+
+}
+.page{
+  height: 100vh;
+}
+
+.card{
+  background-color: #213547;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+.jobCard{
+  background-color: #213547;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+  min-width: 150px;
+}
+main{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
