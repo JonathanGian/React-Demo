@@ -26,7 +26,15 @@ function App() {
 
       {isLoggedin ? (
         <div>
-          <p>Hello, User! You are logged in.</p>
+          <p>The list</p>
+          {personsData.map((person) =>
+        <JobCard
+          key = {person.id}
+          name = {person.firstName}
+          title = {person.title}
+          age = {person.age}
+          animal = {person.animal}
+        />)}
           <button onClick={handleLoginClick}>Log Out</button>
         </div>
         
