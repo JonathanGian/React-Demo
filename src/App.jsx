@@ -13,9 +13,14 @@ import Button from './components/Button';
   );
 }; */
 
-function App() {
 
+
+function App() {
   const [isLoggedin, setIsLoggedIn] = useState(true);
+
+const handleClick = (passedID)=>{// The id is being passed back up with {()=> handleCick(person.id)}
+  console.log("I was clicked",passedID);
+}
 
   const toggleLogin = () => {
     setIsLoggedIn((prevState) => !prevState);
@@ -40,6 +45,7 @@ function App() {
           title = {person.title}
           age = {person.age}
           animal = {person.animal}
+          AppClick = {()=> handleClick(person.id)}
         />)}
         
           <button onClick={toggleLogin}>Log Out</button>
