@@ -1,23 +1,23 @@
 
 import './App.css'
 import { useState } from "react";
-import JobCard/* Jobcard can be changed to anything(just a name for the thing you are calling) */ from "./JobCard"
+import JobCard/* Jobcard can be changed to anything(just a name for the thing you are calling) */ from "./components/JobCard"
 import personsData from './Data/personsData';
 
-function Card(props) {
+/* function Card(props) {
   return (
     <p className="card">
       Hello, {props.firstname} {props.lastname} : {props.message}
     </p>
   );
-};
+}; */
 
 function App() {
 
-  const [isLoggedin, setIsLoggedIn] = useState(false);
+  const [isLoggedin, setIsLoggedIn] = useState(true);
 
-  const handleLoginClick = () => {
-    setIsLoggedIn(!isLoggedin);
+  const toggleLogin = () => {
+    setIsLoggedIn((prevState) => !prevState);
   };
 
   return (
@@ -25,7 +25,7 @@ function App() {
       <h1>Welcome to Our App</h1>
 
       {isLoggedin ? (
-        <div>
+        <div id='JobCardDiv'>
           <p>The list</p>
           {personsData.map((person) =>
         <JobCard
@@ -35,10 +35,10 @@ function App() {
           age = {person.age}
           animal = {person.animal}
         />)}
-          <button onClick={handleLoginClick}>Log Out</button>
+          <button onClick={toggleLogin}>Log Out</button>
         </div>
         
-      ) : (<button onClick={handleLoginClick}>Log in</button>
+      ) : (<button onClick={toggleLogin}>Log in</button>
 
       )}
     </div>
