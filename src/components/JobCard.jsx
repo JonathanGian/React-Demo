@@ -7,7 +7,7 @@ function JobCard({name,title,age,animal,AppClick }){
       <p>Title: {title}</p>
       <p>Age: {age}</p>
       <p>Spirit Animal: {animal}</p>
-    <Button text = "Click Me" cardClick={AppClick}/>
+    <Button text = "Edit" cardClick={AppClick}/>
       </div>
 
     );

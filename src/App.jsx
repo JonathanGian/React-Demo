@@ -32,7 +32,7 @@ const handleClick = (passedID)=>{// The id is being passed back up with {()=> ha
       <h1>Welcome to Our App</h1>
       
       <Button text={isLoggedin ? "Log Out": "Log In"}click={toggleLogin} />
-      
+      {/* <Button type="submit"/> */}
       {isLoggedin ? (
 
         <div id='JobCardDiv'>
