@@ -5,7 +5,9 @@ function JobCard({name,title,age,animal }){
       <p>Title: {title}</p>
       <p>Age: {age}</p>
       <p>Spirit Animal: {animal}</p>
+    
       </div>
+
     );
   };
 
