@@ -1,0 +1,17 @@
+li{
+    list-style: none;
+}
+
+a:hover{
+    
+    color: rgb(250, 255, 255);
+    text-decoration: none;
+    background-color: rgb(195, 94, 94);
+}
+a:visited{
+    color: rgb(126, 233, 147);
+}
+a.active{ /* This works with NavLink */
+    color: greenyellow;
+    text-transform: uppercase;
+}
