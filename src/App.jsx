@@ -5,6 +5,7 @@ import JobCard/* Jobcard can be changed to anything(just a name for the thing yo
 import personsData from './Data/personsData';
 import Button from './components/Button';
 
+
 /* function Card(props) {
   return (
     <p className="card">
@@ -13,7 +14,18 @@ import Button from './components/Button';
   );
 }; */
 
+function App() {
+  return (
+    <>
 
+    </>
+  );
+}
+
+
+
+
+/*                APP FUNCTION BEFORE ROUTE
 function App() {
   const [isLoggedin, setIsLoggedIn] = useState(true);
   const [persons, setPersons] = useState(personsData); // State for persons data
@@ -54,6 +66,6 @@ function App() {
       )}
     </div>
   );
-}
+} */
 
 export default App
