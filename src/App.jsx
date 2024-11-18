@@ -14,13 +14,17 @@ import Button from './components/Button';
 }; */
 
 
-
 function App() {
   const [isLoggedin, setIsLoggedIn] = useState(true);
+  const [persons, setPersons] = useState(personsData); // State for persons data
 
-const handleClick = (passedID)=>{// The id is being passed back up with {()=> handleCick(person.id)}
-  console.log("I was clicked",passedID);
-}
+  const handleAnimalChange = (id, newAnimal) => {
+    setPersons((prevPersons) =>
+      prevPersons.map((person) =>
+        person.id === id ? { ...person, animal: newAnimal } : person
+      )
+    );
+  };
 
   const toggleLogin = () => {
     setIsLoggedIn((prevState) => !prevState);
@@ -28,36 +32,28 @@ const handleClick = (passedID)=>{// The id is being passed back up with {()=> ha
 
   return (
     <div className="app">
-
       <h1>Welcome to Our App</h1>
-      
-      <Button text={isLoggedin ? "Log Out": "Log In"}click={toggleLogin} />
-      {/* <Button type="submit"/> */}
       {isLoggedin ? (
-
         <div id='JobCardDiv'>
           <p>The list</p>
-        
-          {personsData.map((person) =>
-        <JobCard
-          key = {person.id}
-          name = {person.firstName}
-          title = {person.title}
-          age = {person.age}
-          animal = {person.animal}
-          AppClick = {()=> handleClick(person.id)}
-        />)}
-        
+          {persons.map((person) => (
+            <JobCard
+              key={person.id}
+              id={person.id}
+              name={person.firstName}
+              title={person.title}
+              age={person.age}
+              animal={person.animal}
+              onAnimalChange={handleAnimalChange} // Pass down the function
+            />
+          ))}
           <button onClick={toggleLogin}>Log Out</button>
-        
         </div>
-        
-      ) : (<button onClick={toggleLogin}>Log in</button>
-
+      ) : (
+        <button onClick={toggleLogin}>Log in</button>
       )}
     </div>
-  )
+  );
 }
-
 
 export default App

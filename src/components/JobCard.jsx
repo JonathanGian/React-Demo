@@ -1,16 +1,36 @@
+
+import { useState } from "react";
 import Button from "./Button";
 
-function JobCard({name,title,age,animal,AppClick }){
-    return (
-      <div className='jobCard'>
-      <h2>{name}</h2>
-      <p>Title: {title}</p>
-      <p>Age: {age}</p>
-      <p>Spirit Animal: {animal}</p>
-    <Button text = "Edit" cardClick={AppClick}/>
-      </div>
+function JobCard({ id, name, title, age, animal, onAnimalChange }) {
+  const [animalValue, setAnimalValue] = useState(animal);
+  const [isEditing, setIsEditing] = useState(false);
 
-    );
+  const handleChange = (e) => setAnimalValue(e.target.value);
+
+  const toggleEdit = () => {
+    if (isEditing) {
+      // Save the new value and send it to the parent component
+      onAnimalChange(id, animalValue);
+    }
+    setIsEditing((prev) => !prev);
   };
 
-  export default JobCard;
+  return (
+    <div className="jobCard">
+      <p>{name}</p>
+      <p>Title: {title}</p>
+      <p>Age: {age}</p>
+      {isEditing ? (
+        <input type="text" value={animalValue} onChange={handleChange} />// If true it shows this code
+      ) : (
+        <p>Animal: {animalValue}</p> // False shows this code
+      )}
+      <Button
+      cardClick={toggleEdit}
+      text={isEditing ? "Save" : "Edit"} /> {/* Basic if else broken down  */} 
+    </div>
+  );
+}
+
+export default JobCard;
