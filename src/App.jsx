@@ -1,22 +1,17 @@
-
 import './App.css'
-import { useState } from "react";
-import JobCard/* Jobcard can be changed to anything(just a name for the thing you are calling) */ from "./components/JobCard"
-import personsData from './Data/personsData';
-import Button from './components/Button';
-import { Router, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import { router } from './routes/appRoutes'; // This has to be in curly brackets because it was a named export.
 
-/* function Card(props) {
-  return (
-    <p className="card">
-      Hello, {props.firstname} {props.lastname} : {props.message}
-    </p>
-  );
-}; */
-
 function App() {
-  return <RouterProvider router={router}/>;
+  return (
+  <RouterProvider
+      router={router}
+      future={{
+      v7_startTransition: true,
+  }}
+  />
+
+);
 }
 
 
