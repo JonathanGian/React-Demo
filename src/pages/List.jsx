@@ -1,11 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import JobCard from "../components/JobCard";
 import persons from "../Data/personsData";
 
 const List = () => {
     const [isLoggedin, setIsLoggedIn] = useState(true);
     const [personData, setPersons] = useState(persons); // State for persons data
+    const navigate = useNavigate();
   
+    // Navigation onClick
+    const handleNavigate = (id) => {
+    console.log(id)
+        navigate(`/${id}`)
+        
+    };
+
     const handleAnimalChange = (id, newAnimal) => {
       setPersons((prevPersons) =>
         prevPersons.map((person) =>
@@ -34,6 +43,7 @@ const List = () => {
                   age={person.age}
                   animal={person.animal}
                   onAnimalChange={handleAnimalChange} // Pass down the function
+                  onClick={() => handleNavigate(person.id)}
                 />
               ))}
               <button onClick={toggleLogin}>Log Out</button>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Button from "./Button";
 
-function JobCard({ id, name, title, age, animal, onAnimalChange }) {
+function JobCard({ id, name, title, age, animal, onAnimalChange, onClick }) {
   const [animalValue, setAnimalValue] = useState(animal);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -27,9 +27,15 @@ function JobCard({ id, name, title, age, animal, onAnimalChange }) {
         <p>Animal: {animalValue}</p> // False shows this code
       )}
       <Button
-      cardClick={toggleEdit}
+      variant="primary"
+      onClick={toggleEdit}
       text={isEditing ? "Save" : "Edit"} /> {/* Basic if else broken down  */} 
-      <Button text="See more" variant="secondary" />
+
+      <Button
+      text="See more"
+      variant="secondary"
+      onClick={onClick} />
+    
     </div>
   );
 }
