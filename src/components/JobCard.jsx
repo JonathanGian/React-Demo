@@ -29,6 +29,7 @@ function JobCard({ id, name, title, age, animal, onAnimalChange }) {
       <Button
       cardClick={toggleEdit}
       text={isEditing ? "Save" : "Edit"} /> {/* Basic if else broken down  */} 
+      <Button text="See more" variant="secondary" />
     </div>
   );
 }

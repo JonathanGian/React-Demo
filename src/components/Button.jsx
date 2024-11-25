@@ -1,7 +1,7 @@
 import "./Button.css"
-const Button = ({ text, cardClick, type = "button" }) => {// Type lets React know that whenever this button is used, its type is "button"
+const Button = ({ text, cardClick, type = "button", variant = "primary" }) => {// Type lets React know that whenever this button is used, its type is "button"
     return (
-    <button  onClick={cardClick} type={type}> 
+    <button className={`btn ${variant}`} onClick={cardClick} type={type}> 
         {text}
     </button>
     );
